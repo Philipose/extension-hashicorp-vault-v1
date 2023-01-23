@@ -1,0 +1,62 @@
+{
+    "version": "1.6",
+    "requiredAgentVersion": "1.90",
+    "name": "custom.python.hashicorp.vault.v1",
+    "type": "python",
+    "entity": "PROCESS_GROUP_INSTANCE",
+    "metricGroup": "hashicorpvault.metrics",
+    "technologies": ["PYTHON"],
+    "source": {
+      "package": "get_hashicorp_vault_metrics",
+      "className": "HashicorpVaultPlugin",
+      "install_requires": ["requests>=2.6.0"],
+      "activation": "Remote"
+    },
+    "configUI": {
+      "displayName": "Hashicorp Vault URL",
+      "properties": [{
+        "key": "hashicorp_vault_url",
+        "displayName": "URL",
+        "displayHint": "http://localhost:8769"
+      }]
+    },
+    "metrics": [
+      {
+        "timeseries": {
+          "key": "vault.barrier.get.count",
+          "unit": "Count",
+          "aggregation": "Count",
+          "dimensions": [],
+          "displayname": "Vault Barrier Get Count"
+        },
+        "source": {
+          "query": "barrier_get[count]"
+        }
+      }
+    ],
+    "properties": [
+      {
+        "key": "dynatrace_tenant_url",
+        "displayName": "Dynatrace Tenant URL",
+        "description": "URL of the Dynatrace Tenant",
+        "required": true,
+        "type": "STRING"
+      },
+      {
+        "key": "dynatrace_tenant_token",
+        "displayName": "Metric Ingest Token",
+        "description": "Metric Ingest Token for Dynatrace Tenant",
+        "required": true,
+        "type": "STRING"
+      },
+      {
+        "key": "hashicorp_vault_url",
+        "displayName": "Hashicorp Vault URL",
+        "description": "URL of the Hashicorp Vault",
+        "required": true,
+        "type": "STRING",
+        "default": "http://localhost:8200"
+      }
+    ]
+  }
+  

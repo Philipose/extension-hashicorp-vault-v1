@@ -1,0 +1,7 @@
+properties.json
+simulator_snapshot.json
+Pipfile.lock
+*.log
+*.whl
+*.pyc
+Pipfile
