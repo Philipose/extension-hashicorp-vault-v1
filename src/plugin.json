@@ -1,9 +1,8 @@
 {
-    "version": "1.6",
-    "requiredAgentVersion": "1.90",
-    "name": "custom.python.hashicorp.vault.v1",
+    "version": "1.0",
+    "name": "custom.remote.python.hashicorp_vault_v1",
     "type": "python",
-    "entity": "PROCESS_GROUP_INSTANCE",
+    "entity": "CUSTOM_DEVICE",
     "metricGroup": "hashicorpvault.metrics",
     "technologies": ["PYTHON"],
     "source": {
@@ -22,15 +21,11 @@
     },
     "metrics": [
       {
+        "entity": "CUSTOM_DEVICE",
         "timeseries": {
-          "key": "vault.barrier.get.count",
-          "unit": "Count",
-          "aggregation": "Count",
-          "dimensions": [],
-          "displayname": "Vault Barrier Get Count"
-        },
-        "source": {
-          "query": "barrier_get[count]"
+          "key": "rtt",
+          "unit": "MilliSecond",
+          "displayname": "Round-trip time"
         }
       }
     ],
@@ -54,8 +49,14 @@
         "displayName": "Hashicorp Vault URL",
         "description": "URL of the Hashicorp Vault",
         "required": true,
-        "type": "STRING",
-        "default": "http://localhost:8200"
+        "type": "STRING"
+      },
+      {
+        "key": "process_group_id",
+        "displayName": "Vault Process Group ID",
+        "description": "Hashicorp Vault Process Group ID",
+        "required": true,
+        "type": "STRING"
       }
     ]
   }
