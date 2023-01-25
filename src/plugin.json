@@ -4,7 +4,7 @@
     "type": "python",
     "entity": "CUSTOM_DEVICE",
     "metricGroup": "hashicorpvault.metrics",
-    "technologies": ["PYTHON"],
+    "technologies": ["HashicorpVault"],
     "source": {
       "package": "get_hashicorp_vault_metrics",
       "className": "HashicorpVaultPlugin",
@@ -45,7 +45,7 @@
         "type": "STRING"
       },
       {
-        "key": "hashicorp_vault_url",
+        "key": "vault_url",
         "displayName": "Hashicorp Vault URL",
         "description": "URL of the Hashicorp Vault",
         "required": true,
