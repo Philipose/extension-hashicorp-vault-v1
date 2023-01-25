@@ -14,9 +14,9 @@
     "configUI": {
       "displayName": "Hashicorp Vault URL",
       "properties": [{
-        "key": "hashicorp_vault_url",
-        "displayName": "URL",
-        "displayHint": "http://localhost:8769"
+        "key": "vault_url",
+        "displayName": "Vault URL",
+        "displayHint": "https://vault.example.com:8200/v1/sys/metrics"
       }]
     },
     "metrics": [
