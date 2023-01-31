@@ -21,10 +21,12 @@ class HashicorpVaultPlugin(RemoteBasePlugin):
             self.dt_tenant_url = self.dt_tenant_url[:-1]
         self.dt_tenant_token = config['dt_tenant_token']
         self.process_group_id = config['process_group_id']
+        self.verify_dynatrace_ssl = config['verify_dynatrace_ssl']
+        self.verify_vault_ssl = config['verify_vault_ssl']
 
     def query(self, **kwargs):
         """_summary_: Query Vault API"""
-        vault_response = requests.get(url=self.vault_url, timeout=10)
+        vault_response = requests.get(url=self.vault_url, verify=self.verify_vault_ssl, timeout=10)
         vault_response_json = vault_response.json()
 
         metrics = ""
@@ -55,6 +57,7 @@ class HashicorpVaultPlugin(RemoteBasePlugin):
                 'Content-Type': 'text/plain'},
                 data=metrics,
                 timeout=10,
+                verify=self.verify_dynatrace_ssl,
         )
         logger.info("DT_API_RESPONSE: %s", push_metrics_response.status_code)
         if 400 <= push_metrics_response.status_code < 600:
