@@ -1,5 +1,5 @@
 {
-    "version": "1.0",
+    "version": "1.1.0",
     "name": "custom.remote.python.hashicorp_vault_v1",
     "type": "python",
     "entity": "CUSTOM_DEVICE",
@@ -38,6 +38,14 @@
         "type": "STRING"
       },
       {
+        "key": "verify_dynatrace_ssl",
+        "displayName": "Validate Dynatrace SSL Certificate",
+        "description": "Validate Dynatrace SSL Certificate",
+        "required": true,
+        "type": "BOOLEAN",
+        "defaultValue": "true"
+      },
+      {
         "key": "dynatrace_tenant_token",
         "displayName": "Metric Ingest Token",
         "description": "Metric Ingest Token for Dynatrace Tenant",
@@ -50,6 +58,14 @@
         "description": "URL of the Hashicorp Vault",
         "required": true,
         "type": "STRING"
+      },
+      {
+        "key": "verify_vault_ssl",
+        "displayName": "Validate Vault SSL Certificate",
+        "description": "Validate Vault SSL Certificate",
+        "required": true,
+        "type": "BOOLEAN",
+        "defaultValue": "true"
       },
       {
         "key": "process_group_id",
