@@ -31,7 +31,7 @@
     ],
     "properties": [
       {
-        "key": "dynatrace_tenant_url",
+        "key": "dt_tenant_url",
         "displayName": "Dynatrace Tenant URL",
         "description": "URL of the Dynatrace Tenant",
         "required": true,
@@ -42,21 +42,21 @@
         "displayName": "Validate Dynatrace SSL Certificate",
         "description": "Validate Dynatrace SSL Certificate",
         "required": true,
-        "type": "BOOLEAN",
-        "defaultValue": "true"
+        "type": "Boolean",
+        "defaultValue": true
       },
       {
-        "key": "dynatrace_tenant_token",
+        "key": "dt_tenant_token",
         "displayName": "Metric Ingest Token",
         "description": "Metric Ingest Token for Dynatrace Tenant",
         "required": true,
-        "type": "STRING"
+        "type": "Password"
       },
       {
         "key": "vault_url",
         "displayName": "Hashicorp Vault URL",
         "description": "URL of the Hashicorp Vault",
-        "required": true,
+        "required": "true",
         "type": "STRING"
       },
       {
@@ -64,8 +64,8 @@
         "displayName": "Validate Vault SSL Certificate",
         "description": "Validate Vault SSL Certificate",
         "required": true,
-        "type": "BOOLEAN",
-        "defaultValue": "true"
+        "type": "Boolean",
+        "defaultValue": true
       },
       {
         "key": "process_group_id",
